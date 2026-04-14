@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.env
+venv/
+.venv/
+
+# Data — generated at runtime
+data/chroma_db/
+data/history.db
+data/sample_docs/
+
+# Demo data is committed (needed for HF Spaces)
+!data/demo_data.json
+
+# Frontend demo data — committed
+!frontend/demo_data.json
+
+# OS
+.DS_Store
+Thumbs.db

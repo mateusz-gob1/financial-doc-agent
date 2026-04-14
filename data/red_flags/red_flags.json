@@ -1,0 +1,152 @@
+[
+  {
+    "id": "rf001",
+    "category": "Profitability",
+    "title": "Persistent net losses",
+    "description": "Company reports net losses for multiple consecutive years with no clear path to profitability. Burn rate may exceed revenue growth, increasing dilution or bankruptcy risk."
+  },
+  {
+    "id": "rf002",
+    "category": "Profitability",
+    "title": "Negative EBITDA",
+    "description": "Negative EBITDA indicates the core business cannot cover operating expenses before depreciation and interest. For growth-stage companies this is expected, but concerning if it persists beyond Year 5."
+  },
+  {
+    "id": "rf003",
+    "category": "Profitability",
+    "title": "Revenue growth masking margin compression",
+    "description": "Top-line growth is strong but gross margins are declining year-over-year. Company may be buying growth through discounts, incentives, or unsustainable pricing — not building durable economics."
+  },
+  {
+    "id": "rf004",
+    "category": "Liquidity",
+    "title": "High cash burn relative to reserves",
+    "description": "Operating cash outflows are large relative to cash on hand, giving the company less than 18 months of runway. Risk of needing emergency capital raise at unfavorable terms."
+  },
+  {
+    "id": "rf005",
+    "category": "Liquidity",
+    "title": "Debt covenant risk",
+    "description": "Company carries debt with financial covenants (leverage ratios, EBITDA minimums). If operating performance deteriorates, covenants may be breached, triggering accelerated repayment."
+  },
+  {
+    "id": "rf006",
+    "category": "Liquidity",
+    "title": "Refinancing wall approaching",
+    "description": "Significant debt maturities are concentrated in the next 12-24 months. In a high-interest-rate environment, refinancing may be significantly more expensive or unavailable."
+  },
+  {
+    "id": "rf007",
+    "category": "Growth",
+    "title": "Slowing user or customer growth",
+    "description": "Active user or customer counts are growing slower than revenue, indicating the company is extracting more from existing users rather than expanding. Saturation risk in core markets."
+  },
+  {
+    "id": "rf008",
+    "category": "Growth",
+    "title": "Incentive dependency",
+    "description": "Revenue or user growth is heavily dependent on subsidies, cashback, or promotional incentives. Reducing incentives to improve margins may trigger user churn or GMV decline."
+  },
+  {
+    "id": "rf009",
+    "category": "Growth",
+    "title": "Geographic concentration risk",
+    "description": "Majority of revenue comes from one or two markets. Regulatory changes, currency devaluation, or competitive entry in those markets would have outsized impact on total performance."
+  },
+  {
+    "id": "rf010",
+    "category": "Regulatory",
+    "title": "Multi-jurisdiction regulatory exposure",
+    "description": "Company operates across multiple countries with varying fintech, data privacy, and labor regulations. A single regulatory action in a key market can materially impair operations."
+  },
+  {
+    "id": "rf011",
+    "category": "Regulatory",
+    "title": "Fintech or banking license risk",
+    "description": "Company holds or is applying for digital banking or payments licenses. License revocation, denial, or onerous conditions could shut down a key revenue segment."
+  },
+  {
+    "id": "rf012",
+    "category": "Regulatory",
+    "title": "Data privacy and cybersecurity liability",
+    "description": "Business model requires storing sensitive user financial or personal data across multiple jurisdictions. A breach or non-compliance could trigger large fines and reputational damage."
+  },
+  {
+    "id": "rf013",
+    "category": "Competition",
+    "title": "Intense competition from well-funded rivals",
+    "description": "Market has two or more well-capitalized competitors pursuing the same user base. Price wars or incentive wars can quickly erode unit economics for all players."
+  },
+  {
+    "id": "rf014",
+    "category": "Competition",
+    "title": "Big tech platform risk",
+    "description": "A large platform (Google, Meta, Amazon, Alibaba, Tencent) operates in or is expanding into the same space. Incumbents have cost of distribution and data advantages that are hard to match."
+  },
+  {
+    "id": "rf015",
+    "category": "Capital Structure",
+    "title": "Dilution risk from future fundraising",
+    "description": "Company will likely need additional capital before reaching profitability. Future equity raises will dilute existing shareholders, especially if done at a valuation discount."
+  },
+  {
+    "id": "rf016",
+    "category": "Capital Structure",
+    "title": "Share-based compensation inflating losses",
+    "description": "High stock-based compensation (SBC) as a percentage of revenue inflates operating losses. While non-cash, it represents real economic dilution and signals high talent retention costs."
+  },
+  {
+    "id": "rf017",
+    "category": "Operations",
+    "title": "Driver or merchant partner dependency",
+    "description": "Business model relies on gig-economy workers or third-party merchants. Regulatory reclassification of contractors as employees would significantly increase labor costs."
+  },
+  {
+    "id": "rf018",
+    "category": "Operations",
+    "title": "Technology infrastructure reliability risk",
+    "description": "Platform downtime or system failures directly translate to lost transactions and user trust. High dependence on third-party cloud providers introduces concentration risk."
+  },
+  {
+    "id": "rf019",
+    "category": "Macro",
+    "title": "Emerging market currency risk",
+    "description": "Revenue generated in local currencies (SGD, MYR, PHP, IDR) while costs or debt may be USD-denominated. Unfavorable FX movements compress reported USD financials."
+  },
+  {
+    "id": "rf020",
+    "category": "Macro",
+    "title": "Interest rate sensitivity",
+    "description": "Company holds significant floating-rate debt or cash-flow-negative operations funded by external capital. Rising interest rates increase financing costs and reduce equity value."
+  },
+  {
+    "id": "rf021",
+    "category": "Governance",
+    "title": "Dual-class share structure limiting minority rights",
+    "description": "Founders or insiders hold super-voting shares, limiting minority shareholder ability to influence board decisions or executive compensation. Governance risk in adverse scenarios."
+  },
+  {
+    "id": "rf022",
+    "category": "Governance",
+    "title": "Related party transactions",
+    "description": "Material transactions with entities controlled by founders, directors, or major shareholders. Creates potential for conflicts of interest and value extraction at minority expense."
+  },
+  {
+    "id": "rf023",
+    "category": "Profitability",
+    "title": "Gross profit insufficient to cover fixed costs",
+    "description": "Even at full scale, gross profit dollars may not cover fixed operating expenses (R&D, G&A, sales). Business model may be structurally unprofitable without significant scale gains."
+  },
+  {
+    "id": "rf024",
+    "category": "Growth",
+    "title": "Segment profitability divergence",
+    "description": "One profitable segment subsidizes loss-making segments. If the profitable segment is mature, overall company profitability path depends on turning around structurally challenged businesses."
+  },
+  {
+    "id": "rf025",
+    "category": "Liquidity",
+    "title": "Negative operating cash flow despite accounting profit",
+    "description": "Company reports GAAP profit but negative operating cash flow, often due to aggressive revenue recognition or working capital deterioration. Cash is more reliable than reported earnings."
+  }
+]
