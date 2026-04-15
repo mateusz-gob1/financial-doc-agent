@@ -13,9 +13,11 @@ from fastapi.staticfiles import StaticFiles
 load_dotenv()
 
 from agents.graph import build_graph
-from tools.comparator import compare_documents, sort_results_by_period
-from tools.history_store import get_session, init_db, list_sessions, save_session
+from tools.comparator import compare_companies, compare_documents, sort_results_by_period
+from tools.history_store import get_session, init_db, list_sessions, save_session, seed_demo_data
 from tools.vector_store import build_red_flags_index
+
+LIVE_ANALYSIS_ENABLED = bool(os.getenv("OPENROUTER_API_KEY"))
 
 app = FastAPI(title="Financial Document Intelligence Agent")
 
@@ -27,8 +29,17 @@ app.add_middleware(
 )
 
 init_db()
+seed_demo_data()
 build_red_flags_index()
-graph = build_graph()
+graph = build_graph() if LIVE_ANALYSIS_ENABLED else None
+
+
+def _require_live():
+    if not LIVE_ANALYSIS_ENABLED:
+        raise HTTPException(
+            status_code=503,
+            detail="Live analysis is disabled in the public demo. Pre-loaded reports are available in the sidebar.",
+        )
 
 
 def _initial_state(pdf_path: str) -> dict:
@@ -91,6 +102,7 @@ async def analyze_multi(files: List[UploadFile] = File(...)):
     Documents are auto-sorted chronologically by extracted period.
     Returns per-document analysis + pairwise comparisons between consecutive periods.
     """
+    _require_live()
     if not (1 <= len(files) <= 4):
         raise HTTPException(status_code=400, detail="Upload between 1 and 4 PDF files.")
 
@@ -142,9 +154,55 @@ async def analyze_multi(files: List[UploadFile] = File(...)):
             os.unlink(p)
 
 
+@app.post("/api/compare-peers")
+async def compare_peers(files: List[UploadFile] = File(...)):
+    """
+    Compare two companies side-by-side (same or similar period).
+    Accepts exactly 2 PDF files from different companies.
+    """
+    _require_live()
+    if len(files) != 2:
+        raise HTTPException(status_code=400, detail="Peer comparison requires exactly 2 PDF files.")
+
+    for f in files:
+        if not f.filename.lower().endswith(".pdf"):
+            raise HTTPException(status_code=400, detail=f"{f.filename} is not a PDF.")
+
+    filenames = [f.filename for f in files]
+    paths = [_save_upload(f) for f in files]
+
+    try:
+        raw_results = [graph.invoke(_initial_state(p)) for p in paths]
+
+        documents = [
+            _result_to_dict(r, filename=fn)
+            for r, fn in zip(raw_results, filenames)
+        ]
+
+        a = raw_results[0]["metrics"]
+        b = raw_results[1]["metrics"]
+        comparison = compare_companies(a, b)
+
+        total_cost = sum(d["cost_usd"] for d in documents)
+        session_id = save_session(documents, [comparison], total_cost, session_type="peer")
+
+        return JSONResponse({
+            "session_id": session_id,
+            "session_type": "peer",
+            "documents": documents,
+            "comparisons": [comparison],
+            "total_cost_usd": round(total_cost, 6),
+        })
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+    finally:
+        for p in paths:
+            os.unlink(p)
+
+
 @app.get("/api/health")
 def health():
-    return {"status": "ok"}
+    return {"status": "ok", "live_analysis": LIVE_ANALYSIS_ENABLED}
 
 
 @app.get("/api/history")

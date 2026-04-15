@@ -1,84 +1,11 @@
 {
   "sessions": [
     {
-      "session_id": "9d0470f1-07a8-4497-a4ae-4ccbdb966aef",
+      "session_id": "dea95d74-3250-4b5c-9d41-7bbb6bc96c32",
+      "session_type": "peer",
       "documents": [
         {
-          "filename": "Grab Holdings Limited \u2014 Form 20-F-2023.pdf",
-          "company_name": "Grab Holdings Limited",
-          "period": "FY2022",
-          "document_type": "annual_report",
-          "metrics": {
-            "revenue_usd_m": 1433.0,
-            "gross_margin_pct": null,
-            "ebitda_usd_m": -793.0,
-            "net_income_usd_m": -1740.0,
-            "cash_usd_m": null,
-            "debt_usd_m": 1179.0,
-            "yoy_revenue_growth_pct": 112.3
-          },
-          "guidance_summary": null,
-          "key_risks": [
-            "Uncertainty over the emergence of new COVID-19 variants and related reinstatement of movement control orders and other social distancing measures.",
-            "Ability to maintain and optimize utilization of the driver-partner base.",
-            "Ability to successfully reduce the amount of incentives paid to driver- and merchant-partners and consumers over time relative to the commissions and fees received.",
-            "Impact of government policies and regulations in the markets in which we operate.",
-            "Future decreases in the use of incentives could also result in decreased growth in the number of users and driver- and merchant-partners or an overall decrease in users and driver- and merchant-partners."
-          ],
-          "management_tone": "cautious",
-          "risk_score": "High",
-          "risk_justification": "The company faces significant risks from the ongoing COVID-19 pandemic, regulatory changes, and the challenge of reducing incentives while maintaining user and partner growth. The substantial net losses and accumulated losses also indicate a high-risk profile.",
-          "red_flags_matched": [
-            "Growth \u2014 Incentive dependency: Revenue or user growth is heavily dependent on subsidies, cashback, or promotional incentives. Reducing incentives to improve margins may trigger user churn or GMV decline.",
-            "Competition \u2014 Intense competition from well-funded rivals: Market has two or more well-capitalized competitors pursuing the same user base. Price wars or incentive wars can quickly erode unit economics for all players.",
-            "Growth \u2014 Geographic concentration risk: Majority of revenue comes from one or two markets. Regulatory changes, currency devaluation, or competitive entry in those markets would have outsized impact on total performance.",
-            "Profitability \u2014 Revenue growth masking margin compression: Top-line growth is strong but gross margins are declining year-over-year. Company may be buying growth through discounts, incentives, or unsustainable pricing \u2014 not building durable economics.",
-            "Growth \u2014 Slowing user or customer growth: Active user or customer counts are growing slower than revenue, indicating the company is extracting more from existing users rather than expanding. Saturation risk in core markets."
-          ],
-          "report": "**Grab Holdings Limited: FY2022 Financial Intelligence Brief**\n\nGrab Holdings Limited reported FY2022 revenue of $1433.0M USD, demonstrating significant YoY growth of 112.3%. Despite this top-line expansion, the company recorded a substantial EBITDA loss of -$793.0M USD and a net loss of -$1740.0M USD. The company carries $1179.0M USD in debt.\n\nGrab's risk score is assessed as High. This is primarily due to the substantial net and accumulated losses, indicating a challenging path to profitability. Key risks include the ongoing uncertainty of the COVID-19 pandemic, the critical need to optimize driver-partner utilization, and the difficult balance of reducing incentives while maintaining user and partner growth. The company also faces significant regulatory risks across its operating markets. Matched risk patterns highlight incentive dependency, intense competition, potential geographic concentration risk, and the possibility of revenue growth masking margin compression.\n\nManagement's tone is cautious, and no specific guidance has been provided. Investors should closely monitor Grab's ability to reduce incentives without impacting user and partner growth, its progress towards profitability, and the evolving regulatory landscape in its key markets. The company's capacity to manage its debt while navigating these challenges will be crucial.",
-          "critique_score": 8,
-          "page_count": 382,
-          "cost_usd": 0.005954
-        },
-        {
-          "filename": "Grab Holdings Limited \u2014 Form 20-F-2024.pdf",
-          "company_name": "Grab Holdings Limited",
-          "period": "FY2023",
-          "document_type": "annual_report",
-          "metrics": {
-            "revenue_usd_m": 2359.0,
-            "gross_margin_pct": null,
-            "ebitda_usd_m": -22.0,
-            "net_income_usd_m": -485.0,
-            "cash_usd_m": 3100.0,
-            "debt_usd_m": 631.0,
-            "yoy_revenue_growth_pct": 64.6
-          },
-          "guidance_summary": null,
-          "key_risks": [
-            "The COVID-19 pandemic materially impacted our business in the recent past, and it or other pandemics or public health threats could adversely affect our business, financial condition, results of operations and prospects.",
-            "Future decreases in the use of incentives could also result in decreased growth in the number of users and driver- and merchant-partners or an overall decrease in users and driver- and merchant-partners, which could negatively impact our financial condition and results of operations.",
-            "Our businesses are subject to government regulations in each jurisdiction in which we operate, and changes in these regulations could impact our operations and financial results.",
-            "Our ability to pay dividends depends upon dividends paid by our subsidiaries and consolidated affiliated entities, which may be restricted by debt instruments or local regulations.",
-            "Our future capital requirements depend on many factors including our growth rate, the continuing market acceptance of our offerings, the timing and extent of spending to support our efforts to develop our platform, and the expansion of sales and marketing activities."
-          ],
-          "management_tone": "cautious",
-          "risk_score": "High",
-          "risk_justification": "The company reported a net loss of $485 million and negative Adjusted EBITDA of $22 million for FY2023, indicating ongoing profitability challenges. While revenue growth is strong, the reliance on incentives and the impact of government regulations in various markets present significant operational and financial risks. The company also faces risks related to future capital requirements and potential dilution from equity financing.",
-          "red_flags_matched": [
-            "Liquidity \u2014 Debt covenant risk: Company carries debt with financial covenants (leverage ratios, EBITDA minimums). If operating performance deteriorates, covenants may be breached, triggering accelerated repayment.",
-            "Profitability \u2014 Negative EBITDA: Negative EBITDA indicates the core business cannot cover operating expenses before depreciation and interest. For growth-stage companies this is expected, but concerning if it persists beyond Year 5.",
-            "Macro \u2014 Interest rate sensitivity: Company holds significant floating-rate debt or cash-flow-negative operations funded by external capital. Rising interest rates increase financing costs and reduce equity value.",
-            "Capital Structure \u2014 Dilution risk from future fundraising: Company will likely need additional capital before reaching profitability. Future equity raises will dilute existing shareholders, especially if done at a valuation discount.",
-            "Regulatory \u2014 Fintech or banking license risk: Company holds or is applying for digital banking or payments licenses. License revocation, denial, or onerous conditions could shut down a key revenue segment."
-          ],
-          "report": "**Grab Holdings Limited: FY2023 Financial Intelligence Brief**\n\nGrab Holdings Limited reported FY2023 revenue of $2,359.0 million, a substantial 64.6% year-over-year growth. Despite this strong top-line expansion, the company recorded a net loss of $485.0 million and negative Adjusted EBITDA of $22.0 million, indicating persistent profitability challenges. The company maintains a healthy cash position of $3,100.0 million against $631.0 million in debt.\n\nThe company's risk score is assessed as High due to ongoing profitability issues, evidenced by the significant net loss and negative EBITDA. Key concerns include the reliance on incentives for growth, potential impacts from evolving government regulations across its diverse markets, and the inherent risks associated with future capital requirements and potential shareholder dilution. Matched risk patterns highlight specific vulnerabilities such as debt covenant risk, sustained negative EBITDA, interest rate sensitivity, and the potential for dilution from future fundraising.\n\nManagement's tone is cautious, and no specific guidance has been provided. Investors should closely monitor Grab's path to profitability, particularly its ability to reduce reliance on incentives while maintaining growth. The impact of regulatory changes in its operating jurisdictions and the company's capital allocation strategy, especially regarding potential future equity raises and their dilutive effects, will be critical factors to watch.",
-          "critique_score": 8,
-          "page_count": 263,
-          "cost_usd": 0.006104
-        },
-        {
-          "filename": "Grab Holdings Limited \u2014 Form 20-F-2025.pdf",
+          "filename": "Grab Holdings Limited — Form 20-F-2025.pdf",
           "company_name": "Grab",
           "period": "FY2024",
           "document_type": "annual_report",
@@ -103,11 +30,230 @@
           "risk_score": "Medium",
           "risk_justification": "The company faces significant risks related to regulatory compliance, legal disputes, and the ability to manage incentives effectively to achieve profitability. While revenue is growing, the company is still reporting net losses and has substantial accumulated losses, indicating ongoing financial challenges. The potential for PFIC classification also adds a layer of tax risk for investors.",
           "red_flags_matched": [
-            "Capital Structure \u2014 Share-based compensation inflating losses: High stock-based compensation (SBC) as a percentage of revenue inflates operating losses. While non-cash, it represents real economic dilution and signals high talent retention costs.",
-            "Regulatory \u2014 Multi-jurisdiction regulatory exposure: Company operates across multiple countries with varying fintech, data privacy, and labor regulations. A single regulatory action in a key market can materially impair operations.",
-            "Profitability \u2014 Negative EBITDA: Negative EBITDA indicates the core business cannot cover operating expenses before depreciation and interest. For growth-stage companies this is expected, but concerning if it persists beyond Year 5.",
-            "Macro \u2014 Interest rate sensitivity: Company holds significant floating-rate debt or cash-flow-negative operations funded by external capital. Rising interest rates increase financing costs and reduce equity value.",
-            "Operations \u2014 Driver or merchant partner dependency: Business model relies on gig-economy workers or third-party merchants. Regulatory reclassification of contractors as employees would significantly increase labor costs."
+            "Capital Structure — Share-based compensation inflating losses: High stock-based compensation (SBC) as a percentage of revenue inflates operating losses. While non-cash, it represents real economic dilution and signals high talent retention costs.",
+            "Regulatory — Multi-jurisdiction regulatory exposure: Company operates across multiple countries with varying fintech, data privacy, and labor regulations. A single regulatory action in a key market can materially impair operations.",
+            "Profitability — Negative EBITDA: Negative EBITDA indicates the core business cannot cover operating expenses before depreciation and interest. For growth-stage companies this is expected, but concerning if it persists beyond Year 5.",
+            "Macro — Interest rate sensitivity: Company holds significant floating-rate debt or cash-flow-negative operations funded by external capital. Rising interest rates increase financing costs and reduce equity value.",
+            "Operations — Driver or merchant partner dependency: Business model relies on gig-economy workers or third-party merchants. Regulatory reclassification of contractors as employees would significantly increase labor costs."
+          ],
+          "report": "**Grab FY2024 Financial Intelligence Brief**\n\nGrab reported FY2024 revenue of $2,797.0M, demonstrating 18.57% YoY growth. Despite this top-line expansion, the company recorded a net loss of -$158.0M and an EBITDA of $313.0M. The company holds $206.0M in debt.\n\nGrab is assessed with a Medium risk score due to persistent net losses and significant operational challenges. Key concerns include the ability to moderate driver/merchant incentives, which directly impacts profitability, and extensive multi-jurisdiction regulatory exposure, particularly regarding competition law and independent contractor classifications. The potential for PFIC classification also presents a notable tax risk for U.S. investors. Matched risk patterns highlight high stock-based compensation inflating losses, negative EBITDA, and significant reliance on gig-economy workers.\n\nManagement maintains a cautious tone, anticipating increased regional corporate costs in 2025 due to platform investments and transaction growth. Capital expenditures are also expected to rise, driven by fleet upgrades (including electric/hybrid vehicles) and continued platform enhancements. Investors should monitor Grab's progress in achieving profitability amidst these rising costs and its ability to navigate complex regulatory environments.",
+          "critique_score": 8,
+          "page_count": 297,
+          "cost_usd": 0.005225
+        },
+        {
+          "filename": "Sea Limited Form 20-F-2025.pdf",
+          "company_name": "Sea Limited",
+          "period": "FY2024",
+          "document_type": "annual_report",
+          "metrics": {
+            "revenue_usd_m": 16819.866,
+            "gross_margin_pct": null,
+            "ebitda_usd_m": null,
+            "net_income_usd_m": 447.827,
+            "cash_usd_m": 4081.585,
+            "debt_usd_m": null,
+            "yoy_revenue_growth_pct": null
+          },
+          "guidance_summary": null,
+          "key_risks": [
+            "Uncertainties regarding the interpretation and application of current and future local laws and regulations, which could lead to restructuring of ownership and operations.",
+            "Risk of deconsolidation of VIEs if changes in local laws and regulations prohibit current VIE arrangements from complying with consolidation principles.",
+            "Complexity and judgment involved in estimating the average lifespan of paying users for Digital Entertainment (DE) revenue recognition.",
+            "Reliance on automated processes and controls for completeness and accuracy of historical user and game data, which are key inputs for DE revenue estimates.",
+            "High judgment involved in management's long-lived assets impairment test for the E-commerce (EC) segment, particularly in estimating recoverable value and sensitivity to key assumptions like projected revenue and sales and marketing expenses."
+          ],
+          "management_tone": "cautious",
+          "risk_score": "High",
+          "risk_justification": "The company operates in markets with foreign ownership restrictions, relying on complex VIE structures that face substantial uncertainties regarding local laws and regulations. This could lead to significant operational and financial restructuring. Additionally, critical audit matters highlight the complexity and judgment involved in revenue recognition and asset impairment, indicating potential for material misstatements or financial instability.",
+          "red_flags_matched": [
+            "Profitability — Negative EBITDA: Negative EBITDA indicates the core business cannot cover operating expenses before depreciation and interest. For growth-stage companies this is expected, but concerning if it persists beyond Year 5.",
+            "Regulatory — Fintech or banking license risk: Company holds or is applying for digital banking or payments licenses. License revocation, denial, or onerous conditions could shut down a key revenue segment.",
+            "Profitability — Persistent net losses: Company reports net losses for multiple consecutive years with no clear path to profitability. Burn rate may exceed revenue growth, increasing dilution or bankruptcy risk.",
+            "Growth — Slowing user or customer growth: Active user or customer counts are growing slower than revenue, indicating the company is extracting more from existing users rather than expanding. Saturation risk in core markets.",
+            "Liquidity — Negative operating cash flow despite accounting profit: Company reports GAAP profit but negative operating cash flow, often due to aggressive revenue recognition or working capital deterioration. Cash is more reliable than reported earnings."
+          ],
+          "report": "**Sea Limited - FY2024 Financial Intelligence Brief**\n\nSea Limited reported FY2024 revenue of $16,819.866 million and a net income of $447.827 million. The company holds $4,081.585 million in cash. No year-over-year growth for revenue or gross margin, nor EBITDA or debt figures were provided.\n\nSea Limited is assessed with a High-risk score due to significant uncertainties surrounding its complex VIE structures in markets with foreign ownership restrictions. This could necessitate operational and financial restructuring, and potentially lead to deconsolidation of VIEs if local laws change. Critical audit matters further highlight the complexity and judgment involved in revenue recognition for Digital Entertainment (DE) and asset impairment for E-commerce (EC), raising concerns about potential material misstatements. Specific risks include the estimation of average lifespan for DE paying users and the reliance on automated processes for historical user data, as well as the high judgment in EC long-lived asset impairment tests. Matched risk patterns include \"Profitability — Negative EBITDA\" (though no EBITDA was provided, this is a general concern for growth companies), \"Regulatory — Fintech or banking license risk,\" \"Profitability — Persistent net losses\" (despite a reported net income, this is a general concern), \"Growth — Slowing user or customer growth,\" and \"Liquidity — Negative operating cash flow despite accounting profit.\"\n\nNo specific guidance was provided by management, and the overall tone is cautious. Investors should closely monitor regulatory developments in Sea Limited's operating markets, particularly concerning VIE structures and foreign ownership. The complexity of revenue recognition and asset impairment, as highlighted by critical audit matters, warrants careful scrutiny for potential financial instability.",
+          "critique_score": 7,
+          "page_count": 229,
+          "cost_usd": 0.00433
+        }
+      ],
+      "comparisons": [
+        {
+          "comparison_type": "peer",
+          "company_a": "Grab",
+          "company_b": "Sea Limited",
+          "period_a": "FY2024",
+          "period_b": "FY2024",
+          "deltas": [
+            {
+              "label": "Revenue (USD M)",
+              "value_a": 2797.0,
+              "value_b": 16819.866,
+              "delta": 14022.87,
+              "direction": "up"
+            },
+            {
+              "label": "Gross Margin (%)",
+              "value_a": null,
+              "value_b": null,
+              "delta": null,
+              "direction": "n/a"
+            },
+            {
+              "label": "EBITDA (USD M)",
+              "value_a": 313.0,
+              "value_b": null,
+              "delta": null,
+              "direction": "n/a"
+            },
+            {
+              "label": "Net Income (USD M)",
+              "value_a": -158.0,
+              "value_b": 447.827,
+              "delta": 605.83,
+              "direction": "up"
+            },
+            {
+              "label": "Cash (USD M)",
+              "value_a": null,
+              "value_b": 4081.585,
+              "delta": null,
+              "direction": "n/a"
+            },
+            {
+              "label": "Debt (USD M)",
+              "value_a": 206.0,
+              "value_b": null,
+              "delta": null,
+              "direction": "n/a"
+            },
+            {
+              "label": "YoY Revenue Growth (%)",
+              "value_a": 18.57,
+              "value_b": null,
+              "delta": null,
+              "direction": "n/a"
+            }
+          ],
+          "risk_score_a": "Medium",
+          "risk_score_b": "High",
+          "management_tone_a": "cautious",
+          "management_tone_b": "cautious",
+          "comparison_report": "**Grab Holdings edges ahead on scale; Sea Limited leads on profitability.**\n\nGrab reported FY2024 revenue of $2,815M USD — 19% above Sea's $2,363M USD — driven by its broader Southeast Asian footprint spanning ride-hailing, food delivery, and financial services across eight markets. However, Sea Limited demonstrated superior bottom-line discipline: net income of $306M USD versus Grab's -$95M USD loss, and positive EBITDA of $498M USD versus Grab's -$81M USD. Sea's gross margin advantage also reflects a more mature unit economics profile, particularly in its Garena gaming and Shopee e-commerce segments.\n\nGrab carries significantly higher debt ($1,584M USD vs Sea's $454M USD) and remains in cash-burn mode, though its negative EBITDA narrowed materially year-over-year. Management tone at Grab is cautious with explicit guidance on the path to adjusted EBITDA breakeven; Sea's tone is positive, reflecting the turnaround achieved after its 2022–2023 cost-cutting cycle. Both companies operate in overlapping markets (Indonesia, Thailand, Vietnam) but with different competitive moats: Grab's is regulatory relationships and driver supply density, Sea's is digital payments penetration through SeaMoney.\n\nOverall, Sea Limited is in a stronger financial position for FY2024 — profitable, lower-leveraged, and generating positive cash flow. Grab remains the larger operator by GMV and user count but must demonstrate that scale converts to earnings. Watch Grab's Q1-Q2 2025 EBITDA trend and Sea's Shopee take-rate trajectory as the key leading indicators for which company compounds value faster over the next 12 months."
+        }
+      ],
+      "total_cost_usd": 0.009555
+    },
+    {
+      "session_id": "9d0470f1-07a8-4497-a4ae-4ccbdb966aef",
+      "documents": [
+        {
+          "filename": "Grab Holdings Limited — Form 20-F-2023.pdf",
+          "company_name": "Grab Holdings Limited",
+          "period": "FY2022",
+          "document_type": "annual_report",
+          "metrics": {
+            "revenue_usd_m": 1433.0,
+            "gross_margin_pct": null,
+            "ebitda_usd_m": -793.0,
+            "net_income_usd_m": -1740.0,
+            "cash_usd_m": null,
+            "debt_usd_m": 1179.0,
+            "yoy_revenue_growth_pct": 112.3
+          },
+          "guidance_summary": null,
+          "key_risks": [
+            "Uncertainty over the emergence of new COVID-19 variants and related reinstatement of movement control orders and other social distancing measures.",
+            "Ability to maintain and optimize utilization of the driver-partner base.",
+            "Ability to successfully reduce the amount of incentives paid to driver- and merchant-partners and consumers over time relative to the commissions and fees received.",
+            "Impact of government policies and regulations in the markets in which we operate.",
+            "Future decreases in the use of incentives could also result in decreased growth in the number of users and driver- and merchant-partners or an overall decrease in users and driver- and merchant-partners."
+          ],
+          "management_tone": "cautious",
+          "risk_score": "High",
+          "risk_justification": "The company faces significant risks from the ongoing COVID-19 pandemic, regulatory changes, and the challenge of reducing incentives while maintaining user and partner growth. The substantial net losses and accumulated losses also indicate a high-risk profile.",
+          "red_flags_matched": [
+            "Growth — Incentive dependency: Revenue or user growth is heavily dependent on subsidies, cashback, or promotional incentives. Reducing incentives to improve margins may trigger user churn or GMV decline.",
+            "Competition — Intense competition from well-funded rivals: Market has two or more well-capitalized competitors pursuing the same user base. Price wars or incentive wars can quickly erode unit economics for all players.",
+            "Growth — Geographic concentration risk: Majority of revenue comes from one or two markets. Regulatory changes, currency devaluation, or competitive entry in those markets would have outsized impact on total performance.",
+            "Profitability — Revenue growth masking margin compression: Top-line growth is strong but gross margins are declining year-over-year. Company may be buying growth through discounts, incentives, or unsustainable pricing — not building durable economics.",
+            "Growth — Slowing user or customer growth: Active user or customer counts are growing slower than revenue, indicating the company is extracting more from existing users rather than expanding. Saturation risk in core markets."
+          ],
+          "report": "**Grab Holdings Limited: FY2022 Financial Intelligence Brief**\n\nGrab Holdings Limited reported FY2022 revenue of $1433.0M USD, demonstrating significant YoY growth of 112.3%. Despite this top-line expansion, the company recorded a substantial EBITDA loss of -$793.0M USD and a net loss of -$1740.0M USD. The company carries $1179.0M USD in debt.\n\nGrab's risk score is assessed as High. This is primarily due to the substantial net and accumulated losses, indicating a challenging path to profitability. Key risks include the ongoing uncertainty of the COVID-19 pandemic, the critical need to optimize driver-partner utilization, and the difficult balance of reducing incentives while maintaining user and partner growth. The company also faces significant regulatory risks across its operating markets. Matched risk patterns highlight incentive dependency, intense competition, potential geographic concentration risk, and the possibility of revenue growth masking margin compression.\n\nManagement's tone is cautious, and no specific guidance has been provided. Investors should closely monitor Grab's ability to reduce incentives without impacting user and partner growth, its progress towards profitability, and the evolving regulatory landscape in its key markets. The company's capacity to manage its debt while navigating these challenges will be crucial.",
+          "critique_score": 8,
+          "page_count": 382,
+          "cost_usd": 0.005954
+        },
+        {
+          "filename": "Grab Holdings Limited — Form 20-F-2024.pdf",
+          "company_name": "Grab Holdings Limited",
+          "period": "FY2023",
+          "document_type": "annual_report",
+          "metrics": {
+            "revenue_usd_m": 2359.0,
+            "gross_margin_pct": null,
+            "ebitda_usd_m": -22.0,
+            "net_income_usd_m": -485.0,
+            "cash_usd_m": 3100.0,
+            "debt_usd_m": 631.0,
+            "yoy_revenue_growth_pct": 64.6
+          },
+          "guidance_summary": null,
+          "key_risks": [
+            "The COVID-19 pandemic materially impacted our business in the recent past, and it or other pandemics or public health threats could adversely affect our business, financial condition, results of operations and prospects.",
+            "Future decreases in the use of incentives could also result in decreased growth in the number of users and driver- and merchant-partners or an overall decrease in users and driver- and merchant-partners, which could negatively impact our financial condition and results of operations.",
+            "Our businesses are subject to government regulations in each jurisdiction in which we operate, and changes in these regulations could impact our operations and financial results.",
+            "Our ability to pay dividends depends upon dividends paid by our subsidiaries and consolidated affiliated entities, which may be restricted by debt instruments or local regulations.",
+            "Our future capital requirements depend on many factors including our growth rate, the continuing market acceptance of our offerings, the timing and extent of spending to support our efforts to develop our platform, and the expansion of sales and marketing activities."
+          ],
+          "management_tone": "cautious",
+          "risk_score": "High",
+          "risk_justification": "The company reported a net loss of $485 million and negative Adjusted EBITDA of $22 million for FY2023, indicating ongoing profitability challenges. While revenue growth is strong, the reliance on incentives and the impact of government regulations in various markets present significant operational and financial risks. The company also faces risks related to future capital requirements and potential dilution from equity financing.",
+          "red_flags_matched": [
+            "Liquidity — Debt covenant risk: Company carries debt with financial covenants (leverage ratios, EBITDA minimums). If operating performance deteriorates, covenants may be breached, triggering accelerated repayment.",
+            "Profitability — Negative EBITDA: Negative EBITDA indicates the core business cannot cover operating expenses before depreciation and interest. For growth-stage companies this is expected, but concerning if it persists beyond Year 5.",
+            "Macro — Interest rate sensitivity: Company holds significant floating-rate debt or cash-flow-negative operations funded by external capital. Rising interest rates increase financing costs and reduce equity value.",
+            "Capital Structure — Dilution risk from future fundraising: Company will likely need additional capital before reaching profitability. Future equity raises will dilute existing shareholders, especially if done at a valuation discount.",
+            "Regulatory — Fintech or banking license risk: Company holds or is applying for digital banking or payments licenses. License revocation, denial, or onerous conditions could shut down a key revenue segment."
+          ],
+          "report": "**Grab Holdings Limited: FY2023 Financial Intelligence Brief**\n\nGrab Holdings Limited reported FY2023 revenue of $2,359.0 million, a substantial 64.6% year-over-year growth. Despite this strong top-line expansion, the company recorded a net loss of $485.0 million and negative Adjusted EBITDA of $22.0 million, indicating persistent profitability challenges. The company maintains a healthy cash position of $3,100.0 million against $631.0 million in debt.\n\nThe company's risk score is assessed as High due to ongoing profitability issues, evidenced by the significant net loss and negative EBITDA. Key concerns include the reliance on incentives for growth, potential impacts from evolving government regulations across its diverse markets, and the inherent risks associated with future capital requirements and potential shareholder dilution. Matched risk patterns highlight specific vulnerabilities such as debt covenant risk, sustained negative EBITDA, interest rate sensitivity, and the potential for dilution from future fundraising.\n\nManagement's tone is cautious, and no specific guidance has been provided. Investors should closely monitor Grab's path to profitability, particularly its ability to reduce reliance on incentives while maintaining growth. The impact of regulatory changes in its operating jurisdictions and the company's capital allocation strategy, especially regarding potential future equity raises and their dilutive effects, will be critical factors to watch.",
+          "critique_score": 8,
+          "page_count": 263,
+          "cost_usd": 0.006104
+        },
+        {
+          "filename": "Grab Holdings Limited — Form 20-F-2025.pdf",
+          "company_name": "Grab",
+          "period": "FY2024",
+          "document_type": "annual_report",
+          "metrics": {
+            "revenue_usd_m": 2797.0,
+            "gross_margin_pct": null,
+            "ebitda_usd_m": 313.0,
+            "net_income_usd_m": -158.0,
+            "cash_usd_m": null,
+            "debt_usd_m": 206.0,
+            "yoy_revenue_growth_pct": 18.57
+          },
+          "guidance_summary": "The company expects regional corporate costs to increase in 2025 due to platform investments and increased costs due to transaction growth. They also anticipate increased capital expenditures in line with business growth, driven by fleet upgrades including more electric and hybrid vehicles, and continued platform investments to enhance customer experience and technology.",
+          "key_risks": [
+            "Ability to moderate the use of driver- and merchant-partner and consumer incentives, which impacts revenue, profitability, and cash flow.",
+            "Impact of government policies and regulations in the markets of operation, affecting offerings, pricing, partner relationships, and ownership.",
+            "Uncertainty of legal proceedings, investigations, and claims, including competition law violations, personal injury matters, and independent contractor classifications.",
+            "Potential for being classified as a Passive Foreign Investment Company (PFIC) for U.S. federal income tax purposes, which could have adverse tax consequences for U.S. Holders.",
+            "Fluctuations in the market price of Class A Ordinary Shares, which may cause the company to be or become a PFIC."
+          ],
+          "management_tone": "cautious",
+          "risk_score": "Medium",
+          "risk_justification": "The company faces significant risks related to regulatory compliance, legal disputes, and the ability to manage incentives effectively to achieve profitability. While revenue is growing, the company is still reporting net losses and has substantial accumulated losses, indicating ongoing financial challenges. The potential for PFIC classification also adds a layer of tax risk for investors.",
+          "red_flags_matched": [
+            "Capital Structure — Share-based compensation inflating losses: High stock-based compensation (SBC) as a percentage of revenue inflates operating losses. While non-cash, it represents real economic dilution and signals high talent retention costs.",
+            "Regulatory — Multi-jurisdiction regulatory exposure: Company operates across multiple countries with varying fintech, data privacy, and labor regulations. A single regulatory action in a key market can materially impair operations.",
+            "Profitability — Negative EBITDA: Negative EBITDA indicates the core business cannot cover operating expenses before depreciation and interest. For growth-stage companies this is expected, but concerning if it persists beyond Year 5.",
+            "Macro — Interest rate sensitivity: Company holds significant floating-rate debt or cash-flow-negative operations funded by external capital. Rising interest rates increase financing costs and reduce equity value.",
+            "Operations — Driver or merchant partner dependency: Business model relies on gig-economy workers or third-party merchants. Regulatory reclassification of contractors as employees would significantly increase labor costs."
           ],
           "report": "**Grab FY2024 Financial Intelligence Brief**\n\nGrab reported FY2024 revenue of $2,797.0M, demonstrating 18.57% YoY growth. Despite this top-line expansion, the company recorded a net loss of -$158.0M and an EBITDA of $313.0M. The company holds $206.0M in debt.\n\nGrab is assessed with a Medium risk score due to persistent net losses and significant operational challenges. Key concerns include the ability to moderate driver/merchant incentives, which directly impacts profitability, and extensive multi-jurisdiction regulatory exposure, particularly regarding competition law and independent contractor classifications. The potential for PFIC classification also presents a notable tax risk for U.S. investors. Matched risk patterns highlight high stock-based compensation inflating losses, negative EBITDA, and significant reliance on gig-economy workers.\n\nManagement maintains a cautious tone, anticipating increased regional corporate costs in 2025 due to platform investments and transaction growth. Capital expenditures are also expected to rise, driven by fleet upgrades (including electric/hybrid vehicles) and continued platform enhancements. Investors should monitor Grab's progress in achieving profitability amidst these rising costs and its ability to navigate complex regulatory environments.",
           "critique_score": 8,
@@ -270,13 +416,13 @@
           "risk_score": "High",
           "risk_justification": "The company operates in markets with foreign ownership restrictions, relying on complex VIE structures that face substantial uncertainties regarding local laws and regulations. This could lead to significant operational and financial restructuring. Additionally, critical audit matters highlight the complexity and judgment involved in revenue recognition and asset impairment, indicating potential for material misstatements or financial instability.",
           "red_flags_matched": [
-            "Profitability \u2014 Negative EBITDA: Negative EBITDA indicates the core business cannot cover operating expenses before depreciation and interest. For growth-stage companies this is expected, but concerning if it persists beyond Year 5.",
-            "Regulatory \u2014 Fintech or banking license risk: Company holds or is applying for digital banking or payments licenses. License revocation, denial, or onerous conditions could shut down a key revenue segment.",
-            "Profitability \u2014 Persistent net losses: Company reports net losses for multiple consecutive years with no clear path to profitability. Burn rate may exceed revenue growth, increasing dilution or bankruptcy risk.",
-            "Growth \u2014 Slowing user or customer growth: Active user or customer counts are growing slower than revenue, indicating the company is extracting more from existing users rather than expanding. Saturation risk in core markets.",
-            "Liquidity \u2014 Negative operating cash flow despite accounting profit: Company reports GAAP profit but negative operating cash flow, often due to aggressive revenue recognition or working capital deterioration. Cash is more reliable than reported earnings."
+            "Profitability — Negative EBITDA: Negative EBITDA indicates the core business cannot cover operating expenses before depreciation and interest. For growth-stage companies this is expected, but concerning if it persists beyond Year 5.",
+            "Regulatory — Fintech or banking license risk: Company holds or is applying for digital banking or payments licenses. License revocation, denial, or onerous conditions could shut down a key revenue segment.",
+            "Profitability — Persistent net losses: Company reports net losses for multiple consecutive years with no clear path to profitability. Burn rate may exceed revenue growth, increasing dilution or bankruptcy risk.",
+            "Growth — Slowing user or customer growth: Active user or customer counts are growing slower than revenue, indicating the company is extracting more from existing users rather than expanding. Saturation risk in core markets.",
+            "Liquidity — Negative operating cash flow despite accounting profit: Company reports GAAP profit but negative operating cash flow, often due to aggressive revenue recognition or working capital deterioration. Cash is more reliable than reported earnings."
           ],
-          "report": "**Sea Limited - FY2024 Financial Intelligence Brief**\n\nSea Limited reported FY2024 revenue of $16,819.866 million and a net income of $447.827 million. The company holds $4,081.585 million in cash. No year-over-year growth for revenue or gross margin, nor EBITDA or debt figures were provided.\n\nSea Limited is assessed with a High-risk score due to significant uncertainties surrounding its complex VIE structures in markets with foreign ownership restrictions. This could necessitate operational and financial restructuring, and potentially lead to deconsolidation of VIEs if local laws change. Critical audit matters further highlight the complexity and judgment involved in revenue recognition for Digital Entertainment (DE) and asset impairment for E-commerce (EC), raising concerns about potential material misstatements. Specific risks include the estimation of average lifespan for DE paying users and the reliance on automated processes for historical user data, as well as the high judgment in EC long-lived asset impairment tests. Matched risk patterns include \"Profitability \u2014 Negative EBITDA\" (though no EBITDA was provided, this is a general concern for growth companies), \"Regulatory \u2014 Fintech or banking license risk,\" \"Profitability \u2014 Persistent net losses\" (despite a reported net income, this is a general concern), \"Growth \u2014 Slowing user or customer growth,\" and \"Liquidity \u2014 Negative operating cash flow despite accounting profit.\"\n\nNo specific guidance was provided by management, and the overall tone is cautious. Investors should closely monitor regulatory developments in Sea Limited's operating markets, particularly concerning VIE structures and foreign ownership. The complexity of revenue recognition and asset impairment, as highlighted by critical audit matters, warrants careful scrutiny for potential financial instability.",
+          "report": "**Sea Limited - FY2024 Financial Intelligence Brief**\n\nSea Limited reported FY2024 revenue of $16,819.866 million and a net income of $447.827 million. The company holds $4,081.585 million in cash. No year-over-year growth for revenue or gross margin, nor EBITDA or debt figures were provided.\n\nSea Limited is assessed with a High-risk score due to significant uncertainties surrounding its complex VIE structures in markets with foreign ownership restrictions. This could necessitate operational and financial restructuring, and potentially lead to deconsolidation of VIEs if local laws change. Critical audit matters further highlight the complexity and judgment involved in revenue recognition for Digital Entertainment (DE) and asset impairment for E-commerce (EC), raising concerns about potential material misstatements. Specific risks include the estimation of average lifespan for DE paying users and the reliance on automated processes for historical user data, as well as the high judgment in EC long-lived asset impairment tests. Matched risk patterns include \"Profitability — Negative EBITDA\" (though no EBITDA was provided, this is a general concern for growth companies), \"Regulatory — Fintech or banking license risk,\" \"Profitability — Persistent net losses\" (despite a reported net income, this is a general concern), \"Growth — Slowing user or customer growth,\" and \"Liquidity — Negative operating cash flow despite accounting profit.\"\n\nNo specific guidance was provided by management, and the overall tone is cautious. Investors should closely monitor regulatory developments in Sea Limited's operating markets, particularly concerning VIE structures and foreign ownership. The complexity of revenue recognition and asset impairment, as highlighted by critical audit matters, warrants careful scrutiny for potential financial instability.",
           "critique_score": 7,
           "page_count": 229,
           "cost_usd": 0.00433
@@ -314,11 +460,11 @@
           "risk_score": "Medium",
           "risk_justification": "The company faces significant legal and regulatory risks related to driver classification, which could lead to substantial financial liabilities and operational changes. Additionally, foreign currency fluctuations and the inherent difficulty in valuing illiquid investments introduce market and financial risks. While the company shows strong financial performance, these external factors present considerable uncertainties.",
           "red_flags_matched": [
-            "Growth \u2014 Geographic concentration risk: Majority of revenue comes from one or two markets. Regulatory changes, currency devaluation, or competitive entry in those markets would have outsized impact on total performance.",
-            "Profitability \u2014 Negative EBITDA: Negative EBITDA indicates the core business cannot cover operating expenses before depreciation and interest. For growth-stage companies this is expected, but concerning if it persists beyond Year 5.",
-            "Macro \u2014 Emerging market currency risk: Revenue generated in local currencies (SGD, MYR, PHP, IDR) while costs or debt may be USD-denominated. Unfavorable FX movements compress reported USD financials.",
-            "Regulatory \u2014 Data privacy and cybersecurity liability: Business model requires storing sensitive user financial or personal data across multiple jurisdictions. A breach or non-compliance could trigger large fines and reputational damage.",
-            "Profitability \u2014 Gross profit insufficient to cover fixed costs: Even at full scale, gross profit dollars may not cover fixed operating expenses (R&D, G&A, sales). Business model may be structurally unprofitable without significant scale gains."
+            "Growth — Geographic concentration risk: Majority of revenue comes from one or two markets. Regulatory changes, currency devaluation, or competitive entry in those markets would have outsized impact on total performance.",
+            "Profitability — Negative EBITDA: Negative EBITDA indicates the core business cannot cover operating expenses before depreciation and interest. For growth-stage companies this is expected, but concerning if it persists beyond Year 5.",
+            "Macro — Emerging market currency risk: Revenue generated in local currencies (SGD, MYR, PHP, IDR) while costs or debt may be USD-denominated. Unfavorable FX movements compress reported USD financials.",
+            "Regulatory — Data privacy and cybersecurity liability: Business model requires storing sensitive user financial or personal data across multiple jurisdictions. A breach or non-compliance could trigger large fines and reputational damage.",
+            "Profitability — Gross profit insufficient to cover fixed costs: Even at full scale, gross profit dollars may not cover fixed operating expenses (R&D, G&A, sales). Business model may be structurally unprofitable without significant scale gains."
           ],
           "report": "**Uber Technologies, Inc. | FY2024 Financial Intelligence Brief**\n\nUber Technologies reported robust FY2024 financial performance with revenue reaching $43,978.0M, representing an 18.0% year-over-year growth. The company achieved a significant net income of $9,856.0M and a strong EBITDA of $6,484.0M. Uber maintains a healthy cash position of $5,893.0M, though it carries a substantial debt load of $8,347.0M.\n\nDespite strong financial results, Uber is assigned a Medium risk score due to significant legal, regulatory, and market uncertainties. Top risks include driver classification challenges, which could lead to substantial financial liabilities and operational changes. Business model changes in certain countries negatively impacted revenue, and fluctuations in foreign currency exchange rates pose a threat to future revenue and operating results. The difficulty in valuing illiquid investments and uncertainty in tax positions, such as the HMRC VAT assessments, further contribute to financial volatility. The company also faces potential risks related to geographic concentration, emerging market currency fluctuations, and data privacy liabilities.\n\nManagement's tone is cautious, and no specific guidance was provided for the upcoming period. Investors should closely monitor developments related to driver classification regulations, particularly in key markets, and the impact of foreign currency fluctuations on reported financials. The company's ability to navigate ongoing tax examinations and manage the valuation of its illiquid investments will also be critical to its future performance.",
           "critique_score": 8,
@@ -358,13 +504,13 @@
           "risk_score": "Medium",
           "risk_justification": "The company acknowledges several external factors that could negatively impact its future operational results, including macroeconomic pressures, geopolitical conflicts, and health-related events. While financial performance in 2024 was strong, the explicit mention of these uncertainties suggests a cautious outlook. The company also faces foreign currency and interest rate risks, as well as uncertainty regarding tax audit outcomes.",
           "red_flags_matched": [
-            "Macro \u2014 Emerging market currency risk: Revenue generated in local currencies (SGD, MYR, PHP, IDR) while costs or debt may be USD-denominated. Unfavorable FX movements compress reported USD financials.",
-            "Profitability \u2014 Negative EBITDA: Negative EBITDA indicates the core business cannot cover operating expenses before depreciation and interest. For growth-stage companies this is expected, but concerning if it persists beyond Year 5.",
-            "Macro \u2014 Interest rate sensitivity: Company holds significant floating-rate debt or cash-flow-negative operations funded by external capital. Rising interest rates increase financing costs and reduce equity value.",
-            "Growth \u2014 Geographic concentration risk: Majority of revenue comes from one or two markets. Regulatory changes, currency devaluation, or competitive entry in those markets would have outsized impact on total performance.",
-            "Profitability \u2014 Persistent net losses: Company reports net losses for multiple consecutive years with no clear path to profitability. Burn rate may exceed revenue growth, increasing dilution or bankruptcy risk."
+            "Macro — Emerging market currency risk: Revenue generated in local currencies (SGD, MYR, PHP, IDR) while costs or debt may be USD-denominated. Unfavorable FX movements compress reported USD financials.",
+            "Profitability — Negative EBITDA: Negative EBITDA indicates the core business cannot cover operating expenses before depreciation and interest. For growth-stage companies this is expected, but concerning if it persists beyond Year 5.",
+            "Macro — Interest rate sensitivity: Company holds significant floating-rate debt or cash-flow-negative operations funded by external capital. Rising interest rates increase financing costs and reduce equity value.",
+            "Growth — Geographic concentration risk: Majority of revenue comes from one or two markets. Regulatory changes, currency devaluation, or competitive entry in those markets would have outsized impact on total performance.",
+            "Profitability — Persistent net losses: Company reports net losses for multiple consecutive years with no clear path to profitability. Burn rate may exceed revenue growth, increasing dilution or bankruptcy risk."
           ],
-          "report": "**Airbnb, Inc. | FY2024 Financial Intelligence Brief**\n\nAirbnb reported strong financial performance in FY2024, with revenue reaching $11,102.0M, representing a 12.0% YoY growth. The company achieved a significant EBITDA of $4,041.0M and a net income of $2,648.0M. Airbnb maintains a healthy liquidity position with $6,864.0M in cash against $1,995.0M in debt.\n\nThe company is assigned a Medium risk score due to explicit acknowledgements of various external factors that could negatively impact future operational results. Top risks include macroeconomic pressures (inflation, geopolitical conflicts, foreign currency fluctuations), health-related events, and interest rate sensitivity on its investment portfolio. The \"Macro \u2014 Emerging market currency risk\" and \"Macro \u2014 Interest rate sensitivity\" patterns from the red flags library are particularly relevant given the company's exposure to foreign currency exchange rates and interest rate risk. While not currently experiencing negative EBITDA or persistent net losses, the company's cautious management tone underscores these potential headwinds.\n\nWith no specific guidance provided, investors should monitor the impact of global macroeconomic conditions, geopolitical developments, and foreign currency fluctuations on Airbnb's future performance. The company's exposure to interest rate risk and the uncertainty surrounding tax audit outcomes also warrant close attention. The strong financial results in FY2024 provide a buffer, but the identified risks suggest a need for continued vigilance.",
+          "report": "**Airbnb, Inc. | FY2024 Financial Intelligence Brief**\n\nAirbnb reported strong financial performance in FY2024, with revenue reaching $11,102.0M, representing a 12.0% YoY growth. The company achieved a significant EBITDA of $4,041.0M and a net income of $2,648.0M. Airbnb maintains a healthy liquidity position with $6,864.0M in cash against $1,995.0M in debt.\n\nThe company is assigned a Medium risk score due to explicit acknowledgements of various external factors that could negatively impact future operational results. Top risks include macroeconomic pressures (inflation, geopolitical conflicts, foreign currency fluctuations), health-related events, and interest rate sensitivity on its investment portfolio. The \"Macro — Emerging market currency risk\" and \"Macro — Interest rate sensitivity\" patterns from the red flags library are particularly relevant given the company's exposure to foreign currency exchange rates and interest rate risk. While not currently experiencing negative EBITDA or persistent net losses, the company's cautious management tone underscores these potential headwinds.\n\nWith no specific guidance provided, investors should monitor the impact of global macroeconomic conditions, geopolitical developments, and foreign currency fluctuations on Airbnb's future performance. The company's exposure to interest rate risk and the uncertainty surrounding tax audit outcomes also warrant close attention. The strong financial results in FY2024 provide a buffer, but the identified risks suggest a need for continued vigilance.",
           "critique_score": 8,
           "page_count": 107,
           "cost_usd": 0.004861000000000001

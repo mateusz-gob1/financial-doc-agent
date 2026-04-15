@@ -116,7 +116,77 @@ def compare_documents(a: FinancialMetrics, b: FinancialMetrics) -> dict:
     report = generate_comparison_report(a, b, deltas)
 
     return {
+        "comparison_type": "temporal",
         "company": b.company_name,
+        "period_a": a.period,
+        "period_b": b.period,
+        "deltas": [
+            {
+                "label": d.label,
+                "value_a": d.value_a,
+                "value_b": d.value_b,
+                "delta": d.delta,
+                "direction": d.direction,
+            }
+            for d in deltas
+        ],
+        "risk_score_a": a.risk_score,
+        "risk_score_b": b.risk_score,
+        "management_tone_a": a.management_tone,
+        "management_tone_b": b.management_tone,
+        "comparison_report": report,
+    }
+
+
+def generate_peer_comparison_report(
+    a: FinancialMetrics,
+    b: FinancialMetrics,
+    deltas: list[MetricDelta],
+) -> str:
+    """LLM generates a competitive peer comparison narrative. a = Company A, b = Company B."""
+    llm = get_llm(COMPARISON_MODEL)
+    langfuse = get_langfuse_handler()
+
+    prompt = f"""You are a financial analyst writing a peer comparison brief.
+
+Company A: {a.company_name} ({a.period})
+Company B: {b.company_name} ({b.period})
+
+Metric comparison (A vs B):
+{_format_deltas(deltas)}
+
+Risk scores: {a.company_name} = {a.risk_score}, {b.company_name} = {b.risk_score}
+Management tone: {a.company_name} = {a.management_tone}, {b.company_name} = {b.management_tone}
+
+Key risks — {a.company_name}: {"; ".join(a.key_risks[:3]) or "none reported"}
+Key risks — {b.company_name}: {"; ".join(b.key_risks[:3]) or "none reported"}
+
+Write a concise 3-paragraph competitive analysis:
+1. Where {b.company_name} leads — specific metrics, by how much, why it matters
+2. Where {a.company_name} has the edge or where {b.company_name} shows weaknesses
+3. Overall competitive positioning — which company is in a stronger financial position and what to watch next
+
+Use exact numbers. Be direct. No filler."""
+
+    result = llm.invoke(
+        [HumanMessage(content=prompt)],
+        config={"callbacks": [langfuse]},
+    )
+    return result.content
+
+
+def compare_companies(a: FinancialMetrics, b: FinancialMetrics) -> dict:
+    """
+    Peer comparison between two different companies (same or similar period).
+    Returns a dict ready for JSON serialization.
+    """
+    deltas = compute_deltas(a, b)
+    report = generate_peer_comparison_report(a, b, deltas)
+
+    return {
+        "comparison_type": "peer",
+        "company_a": a.company_name,
+        "company_b": b.company_name,
         "period_a": a.period,
         "period_b": b.period,
         "deltas": [

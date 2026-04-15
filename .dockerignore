@@ -1,0 +1,12 @@
+.git
+.venv
+__pycache__
+**/__pycache__
+*.pyc
+.env
+data/chroma_db
+data/sample_docs
+scripts/
+evaluation/
+vault/
+PROJECT-BRIEF.md

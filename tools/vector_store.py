@@ -1,10 +1,12 @@
 import json
 import os
+from pathlib import Path
 import chromadb
 from chromadb.utils.embedding_functions import SentenceTransformerEmbeddingFunction
 
 COLLECTION_NAME = "red_flags"
-CHROMA_PATH = "data/chroma_db"
+CHROMA_PATH     = str(Path(__file__).parent.parent / "data" / "chroma_db")
+RED_FLAGS_PATH  = str(Path(__file__).parent.parent / "data" / "red_flags" / "red_flags.json")
 EMBEDDING_MODEL = "all-MiniLM-L6-v2"
 
 
@@ -14,7 +16,7 @@ def get_collection() -> chromadb.Collection:
     return client.get_or_create_collection(name=COLLECTION_NAME, embedding_function=ef)
 
 
-def build_red_flags_index(red_flags_path: str = "data/red_flags/red_flags.json") -> None:
+def build_red_flags_index(red_flags_path: str = RED_FLAGS_PATH) -> None:
     """
     Embed all red flags into ChromaDB. Safe to call multiple times — skips
     already-indexed entries by ID.

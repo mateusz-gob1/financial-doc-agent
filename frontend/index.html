@@ -158,6 +158,16 @@
     .comparison-body { display: none; padding-top: 4px; }
     .comparison-body.open { display: block; }
 
+    /* Mode toggle */
+    .mode-toggle { display: flex; gap: 4px; margin-bottom: 12px; }
+    .mode-btn {
+      flex: 1; padding: 6px 8px; border-radius: 6px; border: 1px solid #2d3748;
+      background: transparent; color: #718096; font-size: 11px; font-weight: 500;
+      cursor: pointer; transition: all 0.15s; text-align: center;
+    }
+    .mode-btn:hover { border-color: #4a5568; color: #a0aec0; }
+    .mode-btn.active { background: #2d3748; color: #f7fafc; border-color: #2d3748; }
+
     /* Responsive */
     @media (max-width: 800px) {
       .layout { grid-template-columns: 1fr; }
@@ -175,7 +185,7 @@
 
 <div id="demo-banner" class="demo-banner">
   <span>🔍</span>
-  <span><strong>Demo mode</strong> — live pipeline offline. Showing pre-computed analyses. Click any report in the sidebar to explore.</span>
+  <span><strong>Demo mode</strong> — live analysis disabled in the public deployment. Explore pre-computed reports in the sidebar — all features are fully interactive.</span>
 </div>
 
 <div class="layout">
@@ -186,6 +196,10 @@
     <!-- Upload -->
     <div>
       <div class="sidebar-section-label">New analysis</div>
+      <div class="mode-toggle">
+        <button class="mode-btn active" id="mode-temporal" onclick="setMode('temporal')">Multi-Period</button>
+        <button class="mode-btn" id="mode-peer" onclick="setMode('peer')">Peer Comparison</button>
+      </div>
       <div class="upload-box">
         <div class="drop-grid" id="drop-grid"></div>
         <button class="btn-analyze" id="analyze-btn" onclick="runAnalysis()" disabled>Analyze</button>
@@ -219,32 +233,49 @@
 
 <script>
   const API_BASE = '';
-  let DEMO_MODE  = false;
-  let demoSessionsCache = [];   // full session objects from demo_data.json
+  let DEMO_MODE       = false;
+  let ANALYSIS_MODE   = 'temporal';  // 'temporal' | 'peer'
+  let demoSessionsCache = [];
   let activeSessionId   = null;
 
-  const MAX_DOCS = 4;
-  const files    = [];
+  const files = [];
+
+  function getMaxDocs() { return ANALYSIS_MODE === 'peer' ? 2 : 4; }
+
+  function setMode(mode) {
+    ANALYSIS_MODE = mode;
+    document.getElementById('mode-temporal').classList.toggle('active', mode === 'temporal');
+    document.getElementById('mode-peer').classList.toggle('active', mode === 'peer');
+    files.length = 0;
+    renderSlots();
+  }
 
   // ── Upload slots ───────────────────────────────────────────────────────────
   function renderSlots() {
-    const grid = document.getElementById('drop-grid');
+    const grid    = document.getElementById('drop-grid');
+    const maxDocs = getMaxDocs();
+    const isPeer  = ANALYSIS_MODE === 'peer';
     grid.innerHTML = '';
 
     files.forEach((file, i) => {
       const slot = document.createElement('div');
       slot.className = 'drop-slot has-file';
+      const label = isPeer ? `<span style="font-size:10px;color:#4a5568;margin-right:4px">${i === 0 ? 'A' : 'B'}</span>` : '';
       slot.innerHTML = `
+        ${label}
         <span class="drop-slot-icon">📄</span>
         <span class="drop-slot-name">${file.name}</span>
         <span class="drop-slot-remove" onclick="removeFile(event,${i})">✕</span>`;
       grid.appendChild(slot);
     });
 
-    if (files.length < MAX_DOCS) {
+    if (files.length < maxDocs) {
       const add = document.createElement('div');
       add.className = 'add-slot';
-      add.innerHTML = `<span style="font-size:14px">+</span><span>Add document</span>`;
+      const addLabel = isPeer
+        ? (files.length === 0 ? 'Add Company A' : 'Add Company B')
+        : 'Add document';
+      add.innerHTML = `<span style="font-size:14px">+</span><span>${addLabel}</span>`;
       add.onclick = triggerPicker;
       grid.appendChild(add);
     }
@@ -254,22 +285,25 @@
       e.preventDefault();
       Array.from(e.dataTransfer.files)
         .filter(f => f.name.endsWith('.pdf'))
-        .slice(0, MAX_DOCS - files.length)
+        .slice(0, maxDocs - files.length)
         .forEach(addFile);
     };
 
-    document.getElementById('analyze-btn').disabled = files.length === 0 || DEMO_MODE;
+    const btn = document.getElementById('analyze-btn');
+    const canAnalyze = !DEMO_MODE && files.length > 0 && (!isPeer || files.length === 2);
+    btn.disabled = !canAnalyze;
+    btn.textContent = isPeer ? 'Compare Companies' : 'Analyze';
   }
 
   function triggerPicker() {
     const input = document.createElement('input');
     input.type = 'file'; input.accept = '.pdf'; input.multiple = true;
     input.onchange = () =>
-      Array.from(input.files).slice(0, MAX_DOCS - files.length).forEach(addFile);
+      Array.from(input.files).slice(0, getMaxDocs() - files.length).forEach(addFile);
     input.click();
   }
 
-  function addFile(f)        { if (files.length < MAX_DOCS) { files.push(f); renderSlots(); } }
+  function addFile(f)        { if (files.length < getMaxDocs()) { files.push(f); renderSlots(); } }
   function removeFile(e, i)  { e.stopPropagation(); files.splice(i, 1); renderSlots(); }
 
   // ── Session list ───────────────────────────────────────────────────────────
@@ -280,15 +314,23 @@
       return;
     }
     list.innerHTML = sessions.map(s => {
-      const periods   = (s.documents || []).map(d => d.period);
-      const cost      = s.total_cost_usd != null ? `$${Number(s.total_cost_usd).toFixed(4)}` : '';
+      const isPeer   = s.session_type === 'peer';
+      const docs     = s.documents || [];
+      const company  = isPeer
+        ? (docs.length === 2 ? `${docs[0].company_name} vs ${docs[1].company_name}` : s.company_name || '—')
+        : (docs[0]?.company_name || s.company_name || '—');
+      const periods  = isPeer
+        ? [...new Set(docs.map(d => d.period))]
+        : docs.map(d => d.period);
+      const cost     = s.total_cost_usd != null ? `$${Number(s.total_cost_usd).toFixed(4)}` : '';
       const periodBadges = periods.map(p => `<span class="session-period-badge">${p}</span>`).join('');
-      const isActive  = s.session_id === activeSessionId;
+      const typeTag  = isPeer ? `<span style="font-size:10px;color:#9f7aea;font-weight:600;margin-right:4px">PEER</span>` : '';
+      const isActive = s.session_id === activeSessionId;
       return `
         <div class="session-item${isActive ? ' active' : ''}"
              id="sess-${s.session_id}"
              onclick="selectSession('${s.session_id}')">
-          <div class="session-company">${s.documents?.[0]?.company_name || s.company_name || '—'}</div>
+          <div class="session-company">${typeTag}${company}</div>
           <div class="session-periods">${periodBadges}</div>
           ${cost ? `<div class="session-cost">${cost}</div>` : ''}
         </div>`;
@@ -303,13 +345,15 @@
       el.classList.toggle('active', el.id === `sess-${sessionId}`);
     });
 
-    if (DEMO_MODE) {
+    // Use cache only when API is unreachable (populated by loadDemoData fallback).
+    // In normal demo mode the API is reachable for reads; only uploads are disabled.
+    if (DEMO_MODE && demoSessionsCache.length > 0) {
       const session = demoSessionsCache.find(s => s.session_id === sessionId);
       if (session) showResults(session);
       return;
     }
 
-    // Live mode: fetch full session
+    // Fetch from API (works in both live and demo mode)
     fetch(`${API_BASE}/api/history/${sessionId}`)
       .then(r => r.ok ? r.json() : Promise.reject())
       .then(showResults)
@@ -321,12 +365,15 @@
     try {
       const res = await fetch(`${API_BASE}/api/health`, { signal: AbortSignal.timeout(3000) });
       if (!res.ok) throw new Error();
-      DEMO_MODE = false;
+      const data = await res.json();
+      DEMO_MODE = data.live_analysis === false;
+      if (DEMO_MODE) document.getElementById('demo-banner').style.display = 'flex';
+      renderSlots();
       loadLiveSessions();
     } catch {
       DEMO_MODE = true;
       document.getElementById('demo-banner').style.display = 'flex';
-      renderSlots(); // disable analyze button
+      renderSlots();
       await loadDemoData();
     }
   }
@@ -372,26 +419,29 @@
     loading.style.display = 'flex';
     errorEl.style.display = 'none';
 
-    document.getElementById('loading-text').textContent =
-      `Processing ${files.length} doc${files.length > 1 ? 's' : ''}… (~${files.length * 40}s)`;
+    const isPeer = ANALYSIS_MODE === 'peer';
+    document.getElementById('loading-text').textContent = isPeer
+      ? `Comparing companies… (~80s)`
+      : `Processing ${files.length} doc${files.length > 1 ? 's' : ''}… (~${files.length * 40}s)`;
 
     try {
       const form = new FormData();
       files.forEach(f => form.append('files', f));
 
-      const res = await fetch(`${API_BASE}/api/analyze-multi`, { method: 'POST', body: form });
+      const endpoint = isPeer ? '/api/compare-peers' : '/api/analyze-multi';
+      const res = await fetch(`${API_BASE}${endpoint}`, { method: 'POST', body: form });
       if (!res.ok) throw new Error((await res.json()).detail);
       const data = await res.json();
 
       activeSessionId = data.session_id;
       showResults(data);
-      loadLiveSessions(); // refresh sidebar
+      loadLiveSessions();
     } catch (e) {
       errorEl.textContent = 'Error: ' + e.message;
       errorEl.style.display = 'block';
     } finally {
       loading.style.display = 'none';
-      btn.disabled = files.length === 0;
+      renderSlots();
     }
   }
 
@@ -406,6 +456,8 @@
   }
 
   function renderResults(data) {
+    if (data.session_type === 'peer') return renderPeerResults(data);
+
     const docs         = data.documents;
     const comparisons  = data.comparisons || [];
     const company      = docs[0].company_name;
@@ -425,6 +477,109 @@
     } else {
       html += renderDocTabs(docs);
       html += renderComparisons(comparisons);
+    }
+    return html;
+  }
+
+  // ── Peer results ───────────────────────────────────────────────────────────
+  function renderPeerResults(data) {
+    const docs    = data.documents;
+    const compA   = docs[0];
+    const compB   = docs[1];
+
+    const costPill = data.total_cost_usd != null
+      ? `<div class="cost-pill">Cost: <span>$${Number(data.total_cost_usd).toFixed(4)}</span></div>`
+      : '';
+
+    const periodLabel = compA.period === compB.period
+      ? `<span class="badge badge-period">${compA.period}</span>`
+      : `<span class="badge badge-period">${compA.period}</span><span class="badge badge-period">${compB.period}</span>`;
+
+    let html = `
+      <div class="result-header">
+        <h2>${compA.company_name} <span style="color:#4a5568;font-size:15px;font-weight:400">vs</span> ${compB.company_name}</h2>
+        ${periodLabel}${costPill}
+      </div>`;
+
+    // Timeline with company names as columns
+    const headers = docs.map(d =>
+      `<th>${d.company_name}<br><span style="font-weight:400;color:#4a5568;font-size:10px">${d.period}</span></th>`
+    ).join('');
+    const rows = [
+      { label: 'Revenue',    key: 'revenue_usd_m',          fn: v => fmt(v) },
+      { label: 'YoY Growth', key: 'yoy_revenue_growth_pct', fn: v => fmtPct(v) },
+      { label: 'EBITDA',     key: 'ebitda_usd_m',           fn: v => fmt(v) },
+      { label: 'Net Income', key: 'net_income_usd_m',       fn: v => fmt(v) },
+      { label: 'Cash',       key: 'cash_usd_m',             fn: v => fmt(v) },
+      { label: 'Debt',       key: 'debt_usd_m',             fn: v => fmt(v) },
+      { label: 'Risk Score', key: '_risk', fn: (v, d) => `<span class="badge risk-${d.risk_score}">${d.risk_score}</span>` },
+      { label: 'Mgmt Tone',  key: '_tone', fn: (v, d) => `<span class="badge tone-${d.management_tone}">${d.management_tone}</span>` },
+    ];
+    const rowsHtml = rows.map(r => {
+      const cells = docs.map(d => {
+        const val = r.key.startsWith('_') ? null : d.metrics[r.key];
+        return `<td>${r.fn(val, d)}</td>`;
+      }).join('');
+      return `<tr><td class="row-label">${r.label}</td>${cells}</tr>`;
+    }).join('');
+    html += `
+      <div class="section" style="margin-bottom:16px">
+        <h3>Competitive Overview</h3>
+        <table class="timeline-table">
+          <thead><tr><th></th>${headers}</tr></thead>
+          <tbody>${rowsHtml}</tbody>
+        </table>
+      </div>`;
+
+    // Individual briefs — tabs labeled by company name
+    const tabs   = docs.map((d, i) =>
+      `<button class="doc-tab${i===0?' active':''}" onclick="showDocTab(${i})">${d.company_name}</button>`
+    ).join('');
+    const panels = docs.map((d, i) =>
+      `<div id="doc-panel-${i}" style="display:${i===0?'block':'none'}">${renderDocDetail(d)}</div>`
+    ).join('');
+    html += `<div class="doc-tabs">${tabs}</div>${panels}`;
+
+    // Peer comparison block
+    const comparisons = data.comparisons || [];
+    if (comparisons.length) {
+      const c    = comparisons[0];
+      const lblA = c.company_a || compA.company_name;
+      const lblB = c.company_b || compB.company_name;
+      const deltaRows = c.deltas.map(d => {
+        if (d.direction === 'n/a') return `<tr><td>${d.label}</td><td>${d.value_a??'—'}</td><td>${d.value_b??'—'}</td><td class="delta-na">—</td></tr>`;
+        const cls   = d.direction==='up' ? 'delta-up' : (d.direction==='down' ? 'delta-down' : 'delta-na');
+        const arrow = d.direction==='up' ? '▲' : (d.direction==='down' ? '▼' : '→');
+        return `<tr><td>${d.label}</td><td>${d.value_a??'—'}</td><td>${d.value_b??'—'}</td><td class="${cls}">${arrow} ${d.delta>0?'+':''}${d.delta}</td></tr>`;
+      }).join('');
+      html += `
+        <div style="margin-top:8px">
+          <div style="font-size:10px;font-weight:700;color:#4a5568;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px">
+            Peer Comparison
+          </div>
+          <div class="comparison-block">
+            <div class="comparison-header" onclick="toggleComp(0)">
+              <h3>${lblA} vs ${lblB}</h3>
+              <span class="badge risk-${c.risk_score_a}">${lblA}: ${c.risk_score_a}</span>
+              <span style="color:#4a5568">·</span>
+              <span class="badge risk-${c.risk_score_b}">${lblB}: ${c.risk_score_b}</span>
+              <span style="color:#718096;font-size:11px" id="chev-0">▼</span>
+            </div>
+            <div class="comparison-body open" id="comp-0">
+              <div class="section" style="margin-top:4px">
+                <h3>Metric Comparison</h3>
+                <table class="delta-table">
+                  <thead><tr><th>Metric</th><th>${lblA}</th><th>${lblB}</th><th>Difference</th></tr></thead>
+                  <tbody>${deltaRows}</tbody>
+                </table>
+              </div>
+              <div class="section">
+                <h3>Competitive Analysis</h3>
+                <div class="report-text">${mdToHtml(c.comparison_report)}</div>
+              </div>
+            </div>
+          </div>
+        </div>`;
     }
     return html;
   }
