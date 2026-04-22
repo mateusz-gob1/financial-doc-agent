@@ -1,13 +1,3 @@
----
-title: Financial Document Intelligence Agent
-emoji: 📊
-colorFrom: blue
-colorTo: indigo
-sdk: docker
-app_port: 7860
-pinned: false
----
-
 <div align="center">
 
   <h1>📊 Financial Document Intelligence Agent</h1>
